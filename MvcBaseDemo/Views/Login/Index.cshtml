@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "登录";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+</hgroup>
+
+<section id="loginForm">
+    <h2>使用本地账号登录</h2>
+    @using (Html.BeginForm(new { ReturnUrl=ViewBag.ReturnUrl }))
+    {
+        <fieldset>
+            <legend>"登录表单"</legend>
+            <ol>
+                <li></li>
+            </ol>
+        </fieldset>
+    }
+</section>
