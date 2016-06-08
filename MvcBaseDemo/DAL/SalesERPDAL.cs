@@ -24,5 +24,13 @@ namespace MvcBaseDemo.DAL
             modelBuilder.Entity<Employee>().ToTable("TbEmployee");
             base.OnModelCreating(modelBuilder);
         }
+
+        public Employee SaveEmployee(Employee e)
+        {
+            SalesERPDAL salesDal = new SalesERPDAL();
+            salesDal.Employees.Add(e);
+            salesDal.SaveChanges();
+            return e;
+        }
     }
 }
