@@ -138,6 +138,7 @@
     <Compile Include="Areas\Test\Models\EmployeeBusinessLayer.cs" />
     <Compile Include="Areas\Test\Models\FirstNameValidation.cs" />
     <Compile Include="Areas\Test\TestAreaRegistration.cs" />
+    <Compile Include="Areas\Test\ViewModels\CreateEmployeeViewModel.cs" />
     <Compile Include="Areas\Test\ViewModels\EmployeeListViewModel.cs" />
     <Compile Include="Areas\Test\ViewModels\EmployeeViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />

@@ -1,4 +1,7 @@
-﻿@{
+﻿@using MvcBaseDemo.Areas.Test.ViewModels
+@model CreateEmployeeViewModel
+
+@{
     Layout = null;
 }
 <!DOCTYPE html>
@@ -26,9 +29,7 @@
                 <table>
                     <tr>
                         <td>First Name:</td>
-                        <td>
-                            <input type="text" id="TxtFName" name="FirstName" value="" />
-                        </td>
+                        <td><input type="text" id="TxtFName" name="FirstName" value="@Model.FirstName" /></td>
                     </tr>
                     <tr>
                         <td colspan="2" align="right">
@@ -37,7 +38,7 @@
                     </tr>
                     <tr>
                         <td>last Name:</td>
-                        <td><input type="text" id="TxtLName" name="LastName" value="" /></td>
+                        <td><input type="text" id="TxtLName" name="LastName" value="@Model.LastName" /></td>
                     </tr>
                     <tr>
                         <td colspan="2" align="right">
@@ -46,7 +47,7 @@
                     </tr>
                     <tr>
                         <td>Salary:</td>
-                        <td><input type="text" id="TxtSalary" name="Salary" value="" /></td>
+                        <td><input type="text" id="TxtSalary" name="Salary" value="@Model.Salary" /></td>
                     </tr>
                     <tr>
                         <td colspan="2" align="right">

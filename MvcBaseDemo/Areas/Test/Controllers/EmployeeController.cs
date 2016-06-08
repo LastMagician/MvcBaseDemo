@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using MvcBaseDemo.Areas.Test.Models;
 using MvcBaseDemo.Areas.Test.ViewModels;
 using MvcBaseDemo.DAL;
+using System.Text;
 
 namespace MvcBaseDemo.Areas.Test.Controllers
 {
@@ -124,8 +125,11 @@ namespace MvcBaseDemo.Areas.Test.Controllers
                     }
                     else
                     {
-                        //return Content(ModelState.IsValid.ToString());
-                        return View("CreateEmployee");
+                        CreateEmployeeViewModel vm = new CreateEmployeeViewModel();
+                        vm.FirstName = e.FirstName;
+                        vm.LastName = e.LastName;
+                        vm.Salary = e.Salary.ToString();
+                        return View("CreateEmployee", vm);
                     }
                 case "Cancel":
                     // 有bug，跳转地址错误
