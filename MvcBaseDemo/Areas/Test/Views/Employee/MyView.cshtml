@@ -1,7 +1,8 @@
 ﻿@using MvcBaseDemo.Areas.Test.ViewModels
 @model EmployeeListViewModel
 @{
-    ViewBag.Title = "MyView";
+    ViewBag.Title = "MyIndex";
+    ViewBag.Layout = null;
 }
 
 <!DOCTYPE html>
@@ -38,8 +39,6 @@
             Employee Salary: @Model.Salary
         </span>
     </div>*@
-
-    Hello @Model.UserName <hr />
     <div>
         <table>
             <tr>

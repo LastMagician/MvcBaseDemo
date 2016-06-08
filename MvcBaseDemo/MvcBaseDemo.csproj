@@ -132,6 +132,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\PC\Controllers\HomeController.cs" />
     <Compile Include="Areas\PC\PCAreaRegistration.cs" />
+    <Compile Include="Areas\Test\Controllers\EmployeeController.cs" />
     <Compile Include="Areas\Test\Controllers\TestController.cs" />
     <Compile Include="Areas\Test\Models\Employee.cs" />
     <Compile Include="Areas\Test\Models\EmployeeBusinessLayer.cs" />
@@ -209,7 +210,9 @@
     <Content Include="Areas\PC\Views\Web.config" />
     <Content Include="Areas\PC\Views\Home\Index.cshtml" />
     <Content Include="Areas\Test\Views\Web.config" />
-    <Content Include="Areas\Test\Views\Test\MyView.cshtml" />
+    <Content Include="Areas\Test\Views\Employee\MyView.cshtml" />
+    <Content Include="Areas\Test\Views\Employee\Index.cshtml" />
+    <Content Include="Areas\Test\Views\Employee\CreateEmployee.cshtml" />
     <None Include="Properties\PublishProfiles\Socket.io.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
@@ -229,7 +232,9 @@
     <Content Include="Scripts\_references.js" />
     <Content Include="Socket.io\Client\index.html" />
     <Content Include="Socket.io\Server\app.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
