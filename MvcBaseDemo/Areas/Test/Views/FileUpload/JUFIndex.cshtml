@@ -1,0 +1,129 @@
+﻿@model MvcBaseDemo.Areas.Test.Models.MyModel
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>JUFIndex</title>
+</head>
+<body>
+    <h5>简单上传</h5>
+    <div>
+        @Html.TextBoxFor(m => m.MyFile, new { id = "simple", type = "file" }) <br />
+        <a href="#" id="simpleupload">开始简单上传</a>
+    </div>
+
+    <h5>检查文件类型和大小</h5>
+    <div>
+        <input type="file" name="myFile" id="check" /><br />
+        <a href="#" id="checkupload">开始检查并上传</a>
+    </div>
+
+    @* Invalid,seeking reasons. *@
+    @*@section scripts
+    {
+        <script src="~/Scripts/jquery.iframe-transport.js"></script>
+        <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+        <script src="~/Scripts/jquery-ui-1.8.24.min.js"></script>
+        <script src="~/Scripts/jquery.fileupload.js"></script>
+        <script src="~/Scripts/jquery.fileupload-ui.js"></script>
+        <script src="~/Scripts/jquery.iframe-transport.js"></script>
+    }*@
+
+    <script src="~/Scripts/jquery-1.9.1.min_.js"></script>
+    <script src="~/Scripts/jquery-ui-1.9.2.min_.js"></script>
+    <script src="~/Content/FileUpload/jquery.fileupload.js"></script>
+    <script src="~/Content/FileUpload/jquery.fileupload-ui.js"></script>
+    <script src="~/Content/FileUpload/jquery.iframe-transport.js"></script>
+
+    <script type="text/javascript">
+
+        var jqXHRData;
+
+        $(function () {
+            initSimpleFileUpload();
+            initFileUploadWithCheck();
+        
+            //简单上传
+            $("#simpleupload").on("click", function () {
+                //console.log("jqXRData:" + jqXHRData);
+                if (jqXHRData) {
+                    jqXHRData.submit();
+                }
+                return false;
+            })
+
+            //检查图片文件类型和大小
+            $("#checkupload").on("click", function () {
+                if (jqXHRData) {
+                    var isStartUpload = true;
+                    var uploadFile = jqXHRData.files[0];
+
+                    if (!(/\.(gif|jpg|jpeg|tiff|png)$/i).test(uploadFile.name)) {
+                        alert('允许图片格式gif|jpg|jpeg|tiff|png');
+                        isStartUpload = false;
+                    } else if (uploadFile.size > 4000000) { //4mb
+                        alert('图片尺寸不能大于4MB');
+                        isStartUpload = false;
+                    }
+                    if (isStartUpload) {
+                        jqXHRData.submit();
+                    }
+                }
+            })
+        })
+
+        //简单上传
+        function initSimpleFileUpload() {
+            $("#simple").fileupload({
+                url: '@Url.Action("JqueryUploadFile", "FileUpload")',
+                dataType: 'json',
+                add: function (e, data) {
+                    jqXHRData = data;
+                },
+                done: function (event, data) {
+                    if (data.result.isUploaded) {
+                        alert(data.result.message);
+                    } else {
+                        alert(data.result.message);
+                    }
+                },
+                fail: function (event, data) {
+                    if (data.files[0].error) {
+                        alert(data.files[0].error);
+                    }
+                }
+            })
+        }
+        
+        //检查图片类型和大小
+        function initFileUploadWithCheck() {
+            $('#check').fileupload({
+                url: '@Url.Action("JqueryUploadFile", "FileUpload")',
+                dataType: 'json',
+                add: function (e, data) {
+                    jqXHRData = data;
+                },
+                done: function (event, data) {
+                    if (data.result.isUploaded) {
+                        alert(data.result.message);
+                    } else {
+                        alert(data.result.message);
+                    }
+                },
+                fail: function (event, data) {
+                    if (data.files[0].error) {
+                        alert(data.files[0].error);
+                    }
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

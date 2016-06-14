@@ -11,11 +11,7 @@
 </head>
 <body>
     <div>
-        @using (Html.BeginForm("BaseMethod", "FileUpload", FormMethod.Post, new { enctype = "multipart/form-data" }))
-        {
-            <input name="uploadFile" type="file"/> 
-            <input type="submit" value="Upload File"/>
-        }
+        @ViewBag.FilePath
     </div>
 </body>
 </html>
