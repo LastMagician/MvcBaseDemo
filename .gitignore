@@ -155,7 +155,7 @@ csx/
 # Windows Store app package directory
 AppPackages/
 
-/Uploads
+**/Uploads/*
 
 # Others
 *.[Cc]ache
