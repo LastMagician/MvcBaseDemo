@@ -1,0 +1,29 @@
+﻿@model MvcBaseDemo.Areas.PC.Models.LoginModel
+@{
+    ViewBag.Title = "登录页";
+    Layout = "~/Areas/PC/Views/Shared/_layout.cshtml";
+}
+<link href="~/Areas/PC/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Areas/PC/Content/site.css" rel="stylesheet" />
+<script src="~/Areas/PC/Scripts/bootstrap.min.js"></script>
+
+<div class="container">
+    @using (Html.BeginForm("", "",  FormMethod.Post, new { @class = "form-signin" }))
+    {
+        @Html.ValidationSummary()
+        
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @placeholder = "UserName", autocomplete = "off", maxlength = "20" })
+        <label for="inputPassword" class="sr-only">Password</label>
+        @Html.TextBoxFor(model => model.LoginPassword, new { @class = "form-control", @placeholder = "Password", autocomplete = "off", maxlength = "20", type="password" })
+        @*<input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">*@
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    }
+
+</div>

@@ -140,6 +140,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\PC\Controllers\HomeController.cs" />
+    <Compile Include="Areas\PC\Models\LoginModel.cs" />
     <Compile Include="Areas\PC\PCAreaRegistration.cs" />
     <Compile Include="Areas\Test\Controllers\EmployeeController.cs" />
     <Compile Include="Areas\Test\Controllers\FileUploadController.cs" />
@@ -164,6 +165,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\PC\Content\bootstrap-theme.css" />
+    <Content Include="Areas\PC\Content\bootstrap-theme.min.css" />
+    <Content Include="Areas\PC\Content\bootstrap.css" />
+    <Content Include="Areas\PC\Content\bootstrap.min.css" />
+    <Content Include="Areas\PC\Content\site.css" />
+    <Content Include="Areas\PC\Scripts\bootstrap.js" />
+    <Content Include="Areas\PC\Scripts\bootstrap.min.js" />
+    <Content Include="Areas\PC\Scripts\npm.js" />
     <Content Include="Content\FileUpload\jquery.fileupload-ui.js" />
     <Content Include="Content\FileUpload\jquery.fileupload.js" />
     <Content Include="Content\FileUpload\jquery.iframe-transport.js" />
@@ -234,6 +243,8 @@
     <Content Include="Areas\Test\Views\FileUpload\BaseMethod.cshtml" />
     <Content Include="Areas\Test\Views\FileUpload\JUFIndex.cshtml" />
     <Content Include="Areas\Test\Views\FileUpload\MultiUploadIndex.cshtml" />
+    <Content Include="Areas\PC\Views\Shared\_layout.cshtml" />
+    <Content Include="Areas\PC\Views\Home\Login.cshtml" />
     <None Include="Properties\PublishProfiles\Socket.io.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="main.html" />
@@ -278,8 +289,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\PC\Models\" />
-    <Folder Include="Areas\PC\Views\Shared\" />
     <Folder Include="Areas\Test\Views\Shared\" />
     <Folder Include="Images\Uploads\" />
   </ItemGroup>

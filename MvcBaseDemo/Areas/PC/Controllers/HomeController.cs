@@ -16,5 +16,11 @@ namespace MvcBaseDemo.Areas.PC.Controllers
             return View();
         }
 
+        //Login View
+        public ViewResult Login()
+        {
+            return View();
+        }
+
     }
 }
