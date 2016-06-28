@@ -149,6 +149,7 @@
     <Compile Include="Areas\Test\Models\EmployeeBusinessLayer.cs" />
     <Compile Include="Areas\Test\Models\FirstNameValidation.cs" />
     <Compile Include="Areas\Test\Models\MyModel.cs" />
+    <Compile Include="Areas\Test\Models\User.cs" />
     <Compile Include="Areas\Test\TestAreaRegistration.cs" />
     <Compile Include="Areas\Test\ViewModels\CreateEmployeeViewModel.cs" />
     <Compile Include="Areas\Test\ViewModels\EmployeeListViewModel.cs" />
@@ -245,6 +246,7 @@
     <Content Include="Areas\Test\Views\FileUpload\MultiUploadIndex.cshtml" />
     <Content Include="Areas\PC\Views\Shared\_layout.cshtml" />
     <Content Include="Areas\PC\Views\Home\Login.cshtml" />
+    <Content Include="Areas\Test\Views\_ViewStart.cshtml" />
     <None Include="Properties\PublishProfiles\Socket.io.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="main.html" />
